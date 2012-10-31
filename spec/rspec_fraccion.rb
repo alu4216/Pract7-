@@ -17,6 +17,10 @@ require "~/LPP/Pract7/lib/clase_fraccion"
         @obj_1.denom.should == q/m
         @obj_1.num.should == p/m
   end
+  it "Debe salir la fraccion en forma literal " do
+        m= @obj_1.to_s
+	m.should == "1/2" 
+   end
 
 end
 

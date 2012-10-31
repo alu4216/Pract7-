@@ -14,5 +14,7 @@ attr_accessor :num, :denom
     @num=n/m
     @denom=d/m
   end
-
+  def to_s
+    "#{@num}/#{@denom}"
+  end
 end
