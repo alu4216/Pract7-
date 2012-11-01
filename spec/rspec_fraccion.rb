@@ -21,7 +21,10 @@ require "~/LPP/Pract7/lib/clase_fraccion"
         m= @obj_1.to_s
 	m.should == "1/2" 
    end
-
+  it "Debe salir en flotante" do
+     m=@obj_1.to_float
+     m.should==0.5
+  end 
 end
 
 

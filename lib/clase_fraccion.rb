@@ -17,4 +17,7 @@ attr_accessor :num, :denom
   def to_s
     "#{@num}/#{@denom}"
   end
+  def to_float
+    @num.to_f/@denom.to_f
+  end 
 end
