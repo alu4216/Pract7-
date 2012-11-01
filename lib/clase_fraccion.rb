@@ -1,7 +1,7 @@
 
 class Fraccion
 attr_accessor :num, :denom
-
+include Comparable 
    def gcd(x,y)
 	y==0? x:  gcd(y,x%y) 
    end
@@ -20,4 +20,17 @@ attr_accessor :num, :denom
   def to_float
     @num.to_f/@denom.to_f
   end 
+  def <=> (other)
+     @num<=>other.num
+     @denom<=>other.denom
+  end 
+  def abs
+   x=(@num.to_f/@denom.to_f).abs
+end 
+  def reciprocal
+    @denom/@num
+  end 
+ def -
+   -@denom/@num
+ end 
 end
