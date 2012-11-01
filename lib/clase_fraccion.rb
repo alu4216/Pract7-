@@ -14,12 +14,13 @@ include Comparable
     @num=n/m
     @denom=d/m
   end
-  def to_s
-    "#{@num}/#{@denom}"
-  end
   def to_float
     @num.to_f/@denom.to_f
-  end 
+  end
+   def to_s    
+    "#{@num}/#{@denom}"
+  end
+ 
   def <=> (other)
      @num<=>other.num
      @denom<=>other.denom
@@ -30,8 +31,15 @@ end
   def reciprocal
     @denom/@num
   end 
- def opuesto
-  x=(@num.to_f/@denom.to_f)
-   x=-x 
+ def -
+   Fraccion.new(-@num,@denom)
  end 
+ def +(other)
+   m=lcm(@denom,other.denom)
+   x=m/@denom
+   y=m/other.denom
+   p= gcd((@num*x)+(other.num*y),m)
+   Fraccion.new((@num*x)+(other.num*y)/p,m/p)
+ end
+ 
 end

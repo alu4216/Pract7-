@@ -6,6 +6,7 @@ require "~/LPP/Pract7/lib/clase_fraccion"
 
     @obj_1=Fraccion.new(1,2)
     @obj_2=Fraccion.new(2,4)
+    @aux=Fraccion.new(1,1)
   end
     it"Deberia haber un numerador y denominador" do
       @obj_1.denom.should==2
@@ -37,7 +38,16 @@ require "~/LPP/Pract7/lib/clase_fraccion"
    @obj_1.reciprocal.should==2/1
   end
   it "Metodo -" do 
-   @obj_1.opuesto.should == -0.5
+  @aux=@obj_1.-
+  @aux.to_float.should==-0.5
+  end 
+  it "Metodo +" do
+   @aux= @obj_1.+(@obj_2)
+   @aux.denom.should==1
+   @aux.num.should==1
+  end 
+  it " " do
+  puts @aux
   end 
 end
 
