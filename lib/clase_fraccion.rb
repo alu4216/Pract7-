@@ -31,15 +31,22 @@ end
   def reciprocal
     @denom/@num
   end 
- def -
+ def opuesto
    Fraccion.new(-@num,@denom)
  end 
  def +(other)
    m=lcm(@denom,other.denom)
    x=m/@denom
    y=m/other.denom
-   p= gcd((@num*x)+(other.num*y),m)
-   Fraccion.new((@num*x)+(other.num*y)/p,m/p)
+   Fraccion.new((@num*x)+(other.num*y),m)
  end
- 
+  def -(other)
+   m=lcm(@denom,other.denom)
+   x=m/@denom
+   y=m/other.denom
+   Fraccion.new((@num*x)-(other.num*y),m)
+  end
+ def *(other)
+    Fraccion.new(@num*other.num,@denom*other.denom)
+  
 end
