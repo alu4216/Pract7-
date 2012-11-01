@@ -36,6 +36,9 @@ require "~/LPP/Pract7/lib/clase_fraccion"
   it "Metodo reciprocal" do
    @obj_1.reciprocal.should==2/1
   end
+  it "Metodo -" do 
+   @obj_1.opuesto.should == -0.5
+  end 
 end
 
 

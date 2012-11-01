@@ -30,7 +30,8 @@ end
   def reciprocal
     @denom/@num
   end 
- def -
-   -@denom/@num
+ def opuesto
+  x=(@num.to_f/@denom.to_f)
+   x=-x 
  end 
 end
