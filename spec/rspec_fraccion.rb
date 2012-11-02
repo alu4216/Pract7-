@@ -76,8 +76,12 @@ require "~/LPP/Pract7/lib/clase_fraccion"
   it "Comparacion de fracciones (mayor o igual)" do
   m=@aux>=(@obj_1)
   m.should==1
+  end
+  it "Fraccion de restos de otras dos" do
+  @aux=@obj_1.rest(@aux)
+  @aux.denom.should==3
+  @aux.num.should==1 
   end 
-
 end
 
 
