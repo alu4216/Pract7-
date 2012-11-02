@@ -56,11 +56,28 @@ require "~/LPP/Pract7/lib/clase_fraccion"
    @aux.denom.should==10
    @aux.num.should==3
   end
-   it "Metodo *" do
+   it "Metodo /" do
    @aux=@obj_1/(@aux)
    @aux.denom.should==6
    @aux.num.should==5
   end
+  it "Comparacion de fracciones(menor)"do
+   m=@obj_1.<=>(@aux)
+   m.should==-1
+  end 
+  it"Comparacion de fracciones (mayor)" do
+  m=@aux.<=>(@obj_1)
+  m.should==1
+  end
+  it "Comparacion de fracciones (menor o igual)" do
+  m=@obj_1<=(@aux)
+  m.should==-1
+  end 
+  it "Comparacion de fracciones (mayor o igual)" do
+  m=@aux>=(@obj_1)
+  m.should==1
+  end 
+
 end
 
 

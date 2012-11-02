@@ -22,8 +22,10 @@ include Comparable
   end
  
   def <=> (other)
-     @num<=>other.num
-     @denom<=>other.denom
+     m=lcm(@denom,other.denom)
+     x=m/@denom
+     y=m/other.denom
+     (@num*x)<=>(other.num*y)
   end 
   def abs
    x=(@num.to_f/@denom.to_f).abs 
@@ -51,5 +53,26 @@ include Comparable
   end
   def /(other)
    Fraccion.new(@num*other.denom,@denom*other.num) 
+  end
+  def <=(other)
+   m=lcm(@denom,other.denom)
+   x=m/@denom
+   y=m/other.denom
+  if ((@num*x)<=(other.num*y))
+  return -1
   end 
+  else 
+  return 0
+  end 
+  def >=(other)
+   m=lcm(@denom,other.denom)
+   x=m/@denom
+   y=m/other.denom
+  if ((@num*x)>=(other.num*y))
+  return 1
+  end
+  else 
+  return 0
+  end
+
 end
