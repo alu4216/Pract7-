@@ -51,6 +51,16 @@ require "~/LPP/Pract7/lib/clase_fraccion"
    @aux.denom.should==10
    @aux.num.should==-1
   end
+  it "Metodo *" do
+   @aux=@obj_1*(@aux)
+   @aux.denom.should==10
+   @aux.num.should==3
+  end
+   it "Metodo *" do
+   @aux=@obj_1/(@aux)
+   @aux.denom.should==6
+   @aux.num.should==5
+  end
 end
 
 
