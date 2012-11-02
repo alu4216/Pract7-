@@ -74,5 +74,12 @@ include Comparable
   else 
   return 0
   end
-
+  
+  def rest(other)
+  m= @num % @denom
+  n= other.num % other.denom
+  z=gcd(m,n)
+  Fraccion.new(m/z,n/z)
+  end
+ 
 end
